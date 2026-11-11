@@ -1,0 +1,162 @@
+{
+  "entities": {
+    "RundownItem": {
+      "title": "RundownItem",
+      "description": "Baris rundown perjalanan ziarah",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "order": { "type": "number" },
+        "routeMode": { "type": "string", "enum": ["ngetan", "ngulon"] },
+        "location": { "type": "string", "maxLength": 200 },
+        "locationId": { "type": "string" },
+        "travelDuration": { "type": "string" },
+        "timeIn": { "type": "string" },
+        "durationAtLocation": { "type": "string" },
+        "timeOut": { "type": "string" },
+        "activity": { "type": "string", "maxLength": 300 },
+        "dayNumber": { "type": "number" },
+        "dayName": { "type": "string" },
+        "date": { "type": "string" },
+        "status": { "type": "string", "enum": ["selesai", "berlangsung", "berikutnya"] },
+        "notes": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["order", "location", "activity", "dayNumber", "dayName", "date", "status"]
+    },
+    "Tokoh": {
+      "title": "Tokoh",
+      "description": "Profil Ulama dan Auliya yang diziarahi",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "maxLength": 200 },
+        "titleOrHonorific": { "type": "string", "maxLength": 200 },
+        "slug": { "type": "string" },
+        "photo": { "type": "string" },
+        "biography": { "type": "string" },
+        "tombLocationId": { "type": "string" },
+        "status": { "type": "string", "enum": ["published", "draft"] },
+        "routeMode": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["name", "titleOrHonorific", "slug", "biography"]
+    },
+    "Makam": {
+      "title": "Makam",
+      "description": "Lokasi makam atau maqbarah ziarah",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "maxLength": 200 },
+        "regency": { "type": "string" },
+        "address": { "type": "string" },
+        "slug": { "type": "string" },
+        "photo": { "type": "string" },
+        "description": { "type": "string" },
+        "routeMode": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["name", "regency", "address", "slug"]
+    },
+    "SiteSettings": {
+      "title": "SiteSettings",
+      "description": "Pengaturan umum website dan siaran live tracker ziarah",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "siteTitle": { "type": "string" },
+        "activeRundownId": { "type": "string" },
+        "liveBroadcastNote": { "type": "string" },
+        "activeAgendaMode": { "type": "string" },
+        "showActiveAgendaBanner": { "type": "boolean" },
+        "waGreeting": { "type": "string" },
+        "waClosing": { "type": "string" },
+        "waPerAgendaTemplate": { "type": "string" },
+        "waAllRundownIntro": { "type": "string" },
+        "activeRouteMode": { "type": "string", "enum": ["ngetan", "ngulon"] },
+        "infoKilatBadge": { "type": "string" },
+        "infoKilatTitle": { "type": "string" },
+        "infoKilatDescription": { "type": "string" },
+        "showLongNavCard": { "type": "boolean" },
+        "longNavTitle": { "type": "string" },
+        "longNavDescription": { "type": "string" },
+        "longNavButtonText": { "type": "string" },
+        "showKilatAgenda": { "type": "boolean" },
+        "showKilatTokoh": { "type": "boolean" },
+        "showKilatQuickSchedule": { "type": "boolean" },
+        "showKilatDoa": { "type": "boolean" },
+        "kilatAgendaTitle": { "type": "string" },
+        "kilatAgendaDesc": { "type": "string" },
+        "kilatTokohTitle": { "type": "string" },
+        "kilatTokohDesc": { "type": "string" },
+        "kilatQuickScheduleTitle": { "type": "string" },
+        "kilatQuickScheduleDesc": { "type": "string" },
+        "kilatDoaTitle": { "type": "string" },
+        "kilatDoaDesc": { "type": "string" },
+        "profileBackgroundNarration": { "type": "string" },
+        "profilePurposeNarration": { "type": "string" },
+        "pesantrenWelcomeNarration": { "type": "string" },
+        "doaIntroductionNarration": { "type": "string" },
+        "participantNoticeNarration": { "type": "string" },
+        "beritaIntroNarration": { "type": "string" },
+        "dokumentasiIntroNarration": { "type": "string" },
+        "footerNarration": { "type": "string" },
+        "themeFontBody": { "type": "string" },
+        "themeFontHeading": { "type": "string" },
+        "themeFontSize": { "type": "string" },
+        "themeColorScheme": { "type": "string" },
+        "themeAccentColor": { "type": "string" },
+        "themeBgTint": { "type": "string" },
+        "themeCardRadius": { "type": "string" },
+        "themeShowPattern": { "type": "boolean" },
+        "sectionOrderHome": { "type": "array", "items": { "type": "string" } },
+        "sectionVisibilityHome": { "type": "object" },
+        "linkPesantrenWeb": { "type": "string" },
+        "linkMapsLocation": { "type": "string" },
+        "linkYoutube": { "type": "string" },
+        "linkInstagram": { "type": "string" },
+        "linkFacebook": { "type": "string" },
+        "linkTikTok": { "type": "string" },
+        "linkBukuSakuPdf": { "type": "string" },
+        "linkEmergencyCall": { "type": "string" },
+        "uiHeaderBadgeText": { "type": "string" },
+        "uiBtnNavigasiText": { "type": "string" },
+        "uiBtnBukuSakuText": { "type": "string" },
+        "uiBtnJadwalText": { "type": "string" },
+        "uiHomeCountdownTitle": { "type": "string" },
+        "uiHomeCountdownSubtitle": { "type": "string" },
+        "uiHomeLiveTrackerTitle": { "type": "string" },
+        "uiHomeMakamTitle": { "type": "string" },
+        "uiHomeMakamSubtitle": { "type": "string" },
+        "uiHomeTokohTitle": { "type": "string" },
+        "uiHomeTokohSubtitle": { "type": "string" },
+        "uiHomeDoaTitle": { "type": "string" },
+        "uiHomeDoaSubtitle": { "type": "string" },
+        "uiHomeBeritaTitle": { "type": "string" },
+        "uiHomeBeritaSubtitle": { "type": "string" },
+        "uiHomeBukuSakuTitle": { "type": "string" },
+        "uiHomeBukuSakuSubtitle": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/rundown/{rundownId}": {
+      "schema": { "$ref": "#/entities/RundownItem" },
+      "description": "Koleksi jadwal dan rundown perjalanan ziarah"
+    },
+    "/tokoh/{tokohId}": {
+      "schema": { "$ref": "#/entities/Tokoh" },
+      "description": "Koleksi profil tokoh auliya dan ulama"
+    },
+    "/makam/{makamId}": {
+      "schema": { "$ref": "#/entities/Makam" },
+      "description": "Koleksi lokasi makam maqbarah ziarah"
+    },
+    "/settings/{settingId}": {
+      "schema": { "$ref": "#/entities/SiteSettings" },
+      "description": "Dokumen konfigurasi dan status langsung agenda"
+    }
+  }
+}

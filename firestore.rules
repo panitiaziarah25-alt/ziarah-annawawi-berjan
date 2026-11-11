@@ -1,0 +1,50 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Public read for pilgrims and visitors
+    match /rundown/{rundownId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /tokoh/{tokohId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /makam/{makamId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /posts/{postId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /documentation/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /agenda/{agendaId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /panitia/{panitiaId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}

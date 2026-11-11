@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Ziarah An-Nawawi 2026 - Portal \u0026 Panduan Ziarah",
+  "description": "Website Resmi dan Sistem Informasi Kegiatan Ziarah Makam Auliya\u0027, Ulama\u0027, dan Pejuang Pondok Pesantren An-Nawawi Berjan Purworejo Tahun 2026 M. / 1448 H.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
